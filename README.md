@@ -110,4 +110,5 @@ Used by `Client.dll` and the C# app:
 
 - The VMM hooks live for ~3 seconds only — long enough to capture the VM pointer, then they are gone.
 - No plaintext API names in the binary: module and export resolution is hash-based, and strings are XOR-encrypted at compile time (seeded from the build time, so every build encrypts differently).
-- The bridge unlinks itself from the PEB after the handoff. `Client.dll` resolves the exports by name through its own PEB walk, so the rename from `GTCBst.dll` to `ScriptKittens.dll` does not break it.
+- The bridge unlinks itself from the PEB after the handoff. `Client.dll` resolves the exports by name through its own PEB walk.
+
